@@ -1,0 +1,13 @@
+{
+  "name": "LS_RawBlob",
+  "type": "Microsoft.DataFactory/factories/linkedservices",
+  "properties": {
+    "type": "AzureBlobStorage",
+    "typeProperties": {
+      "connectionString": "DefaultEndpointsProtocol=https;AccountName=youraccount;EndpointSuffix=core.windows.net"
+    },
+    "annotations": [
+      "test"
+    ]
+  }
+}

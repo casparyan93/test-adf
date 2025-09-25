@@ -1,0 +1,26 @@
+{
+  "name": "TR_Hourly",
+  "type": "Microsoft.DataFactory/factories/triggers",
+  "properties": {
+    "type": "ScheduleTrigger",
+    "typeProperties": {
+      "recurrence": {
+        "frequency": "Hour",
+        "interval": 1,
+        "startTime": "2025-01-01T00:00:00Z",
+        "timeZone": "UTC"
+      }
+    },
+    "pipelines": [
+      {
+        "pipelineReference": {
+          "referenceName": "PL_Copy_SampleCsv",
+          "type": "PipelineReference"
+        },
+        "parameters": {}
+      }
+    ],
+    "annotations": ["test"],
+    "runtimeState": "Stopped"
+  }
+}

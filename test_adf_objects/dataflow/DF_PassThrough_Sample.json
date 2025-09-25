@@ -1,0 +1,36 @@
+{
+  "name": "DF_PassThrough_Sample",
+  "type": "Microsoft.DataFactory/factories/dataflows",
+  "properties": {
+    "type": "MappingDataFlow",
+    "typeProperties": {
+      "sources": [
+        {
+          "name": "SourceCsv",
+          "dataset": {
+            "referenceName": "DS_Raw_SampleCsv",
+            "type": "DatasetReference"
+          },
+          "sourceOperationProperties": {},
+          "linkedServiceName": null,
+          "schemaLinkedService": null
+        }
+      ],
+      "sinks": [
+        {
+          "name": "SinkCsv",
+          "dataset": {
+            "referenceName": "DS_Processed_SampleCsv",
+            "type": "DatasetReference"
+          },
+          "linkedServiceName": null
+        }
+      ],
+      "transformations": []
+    },
+    "annotations": ["test"],
+    "folder": {
+      "name": "test"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "adf-test-factory-sample",
+  "location": "westeurope",
+  "identity": {
+    "type": "SystemAssigned"
+  },
+  "properties": {
+    "publicNetworkAccess": "Enabled"
+  }
+}

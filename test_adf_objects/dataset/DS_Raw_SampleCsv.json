@@ -1,0 +1,30 @@
+{
+  "name": "DS_Raw_SampleCsv",
+  "type": "Microsoft.DataFactory/factories/datasets",
+  "properties": {
+    "linkedServiceName": {
+      "referenceName": "LS_RawBlob",
+      "type": "LinkedServiceReference"
+    },
+    "folder": {
+      "name": "test"
+    },
+    "annotations": [],
+    "type": "DelimitedText",
+    "typeProperties": {
+      "location": {
+        "type": "AzureBlobStorageLocation",
+        "fileName": "input-sample.csv",
+        "folderPath": "raw",
+        "container": "data"
+      },
+      "columnDelimiter": ",",
+      "escapeChar": "\\\\",
+      "firstRowAsHeader": true
+    },
+    "schema": [
+      {"name": "Id", "type": "String"},
+      {"name": "Value", "type": "String"}
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "name": "PL_Copy_SampleCsv",
+  "type": "Microsoft.DataFactory/factories/pipelines",
+  "properties": {
+    "activities": [
+      {
+        "name": "CopyCsv",
+        "type": "Copy",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 1,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "source": {
+            "type": "DelimitedTextSource",
+            "storeSettings": {
+              "type": "AzureBlobStorageReadSettings"
+            },
+            "formatSettings": {
+              "type": "DelimitedTextReadSettings"
+            }
+          },
+          "sink": {
+            "type": "DelimitedTextSink",
+            "storeSettings": {
+              "type": "AzureBlobStorageWriteSettings"
+            },
+            "formatSettings": {
+              "type": "DelimitedTextWriteSettings",
+              "quoteAllText": true
+            }
+          },
+          "enableStaging": false
+        },
+        "inputs": [
+          {
+            "referenceName": "DS_Raw_SampleCsv",
+            "type": "DatasetReference"
+          }
+        ],
+        "outputs": [
+          {
+            "referenceName": "DS_Processed_SampleCsv",
+            "type": "DatasetReference"
+          }
+        ]
+      }
+    ],
+    "runDimensions": {},
+    "annotations": ["test"],
+    "folder": {
+      "name": "test"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "IR_Auto",
+  "type": "Microsoft.DataFactory/factories/integrationruntimes",
+  "properties": {
+    "type": "Managed",
+    "typeProperties": {
+      "computeProperties": {
+        "location": "AutoResolve",
+        "nodeSize": "Small",
+        "numberOfNodes": 2
+      }
+    },
+    "description": "Sample auto-resolve managed IR for tests",
+    "annotations": ["test"]
+  }
+}
