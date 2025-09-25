@@ -26,7 +26,8 @@
           "linkedServiceName": null
         }
       ],
-      "transformations": []
+  "transformations": [],
+  "script": "source(output(Id as string, Value as string), allowSchemaDrift: true, validateSchema: false, ignoreNoFilesFound: false) ~> SourceCsv\nSourceCsv sink(output(Id as string, Value as string), allowSchemaDrift: true, validateSchema: false, partitionFileNames: [], partitionColumns: []) ~> SinkCsv"
     },
     "annotations": ["test"],
     "folder": {
